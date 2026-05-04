@@ -1,12 +1,215 @@
-    1 <!DOCTYPE html>
-    2 <html lang="en">
-    3 <head>
-    4     <meta charset="UTF-8">
-    5     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    6     <title>Simple Page</title>
-    7 </head>
-    8 <body>
-    9     <h1>Hello World!</h1>
-   10     <p>This is a simple HTML file.</p>
-   11 </body>
-   12 </html>
+1 <!DOCTYPE html>
+     2 <html lang="en">
+     3 <head>
+     4     <meta charset="UTF-8">
+     5     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6     <title>YungSoul | Official Website</title>
+     7     <style>
+     8         :root {
+     9             --primary-color: #ff3e3e; /* Energetic Red */
+    10             --spotify-green: #1DB954;
+    11             --bg-dark: #0a0a0a;
+    12             --bg-card: #161616;
+    13             --text-light: #f4f4f4;
+    14             --text-dim: #a0a0a0;
+    15         }
+    16
+    17         body {
+    18             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    19             background-color: var(--bg-dark);
+    20             color: var(--text-light);
+    21             margin: 0;
+    22             overflow-x: hidden;
+    23         }
+    24
+    25         /* Navigation */
+    26         nav {
+    27             padding: 1.5rem 5%;
+    28             display: flex;
+    29             justify-content: space-between;
+    30             align-items: center;
+    31             background: rgba(10, 10, 10, 0.95);
+    32             backdrop-filter: blur(10px);
+    33             position: fixed;
+    34             width: 90%;
+    35             top: 0;
+    36             z-index: 1000;
+    37         }
+    38
+    39         .logo {
+    40             font-size: 1.8rem;
+    41             font-weight: 900;
+    42             letter-spacing: -1px;
+    43             color: var(--text-light);
+    44             text-decoration: none;
+    45         }
+    46
+    47         .logo span {
+    48             color: var(--primary-color);
+    49         }
+    50
+    51         /* Hero Section */
+    52         .hero {
+    53             height: 100vh;
+    54             display: flex;
+    55             flex-direction: column;
+    56             justify-content: center;
+    57             align-items: center;
+    58             text-align: center;
+    59             background: linear-gradient(to bottom, rgba(10,10,10,0.2), var(--bg-dark)),
+    60                         url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=1920&q=80');
+    61             background-size: cover;
+    62             background-position: center;
+    63             padding: 0 20px;
+    64         }
+    65
+    66         .hero h1 {
+    67             font-size: clamp(3rem, 10vw, 6rem);
+    68             margin: 0;
+    69             text-transform: uppercase;
+    70             font-weight: 900;
+    71             line-height: 0.9;
+    72         }
+    73
+    74         .hero p {
+    75             font-size: 1.2rem;
+    76             color: var(--text-dim);
+    77             letter-spacing: 4px;
+    78             margin-top: 10px;
+    79             text-transform: uppercase;
+    80         }
+    81
+    82         /* Content Section */
+    83         .container {
+    84             max-width: 1000px;
+    85             margin: 0 auto;
+    86             padding: 80px 20px;
+    87         }
+    88
+    89         .section-header {
+    90             text-align: center;
+    91             margin-bottom: 50px;
+    92         }
+    93
+    94         .section-header h2 {
+    95             font-size: 2.5rem;
+    96             text-transform: uppercase;
+    97         }
+    98
+    99         /* Spotify Card */
+   100         .music-card {
+   101             background: var(--bg-card);
+   102             padding: 30px;
+   103             border-radius: 24px;
+   104             border: 1px solid #333;
+   105             transition: transform 0.3s ease;
+   106         }
+   107
+   108         .music-card:hover {
+   109             transform: translateY(-5px);
+   110             border-color: var(--primary-color);
+   111         }
+   112
+   113         /* Buttons */
+   114         .cta-button {
+   115             background-color: var(--spotify-green);
+   116             color: black;
+   117             padding: 15px 40px;
+   118             border-radius: 50px;
+   119             text-decoration: none;
+   120             font-weight: bold;
+   121             display: inline-flex;
+   122             align-items: center;
+   123             gap: 10px;
+   124             margin-top: 30px;
+   125             transition: all 0.3s ease;
+   126         }
+   127
+   128         .cta-button:hover {
+   129             transform: scale(1.05);
+   130             filter: brightness(1.1);
+   131         }
+   132
+   133         /* Footer */
+   134         footer {
+   135             padding: 60px 20px;
+   136             text-align: center;
+   137             border-top: 1px solid #222;
+   138         }
+   139
+   140         .social-links {
+   141             display: flex;
+   142             justify-content: center;
+   143             gap: 30px;
+   144             margin-bottom: 30px;
+   145         }
+   146
+   147         .social-links a {
+   148             color: var(--text-dim);
+   149             text-decoration: none;
+   150             font-weight: 600;
+   151             transition: color 0.3s;
+   152         }
+   153
+   154         .social-links a:hover {
+   155             color: var(--primary-color);
+   156         }
+   157
+   158         .copyright {
+   159             font-size: 0.8rem;
+   160             color: #555;
+   161         }
+   162     </style>
+   163 </head>
+   164 <body>
+   165
+   166     <nav>
+   167         <a href="#" class="logo">YUNG<span>SOUL</span></a>
+   168         <div>
+   169             <a href="https://open.spotify.com/artist/7ydS7UbzO4rsYK7WUqvQno" target="_blank" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 0;">Follow</a>
+   170         </div>
+   171     </nav>
+   172
+   173     <section class="hero">
+   174         <h1>YUNGSOUL</h1>
+   175         <p>Artist • Musician • Creator</p>
+   176         <a href="#music" class="cta-button">EXPLORE THE SOUND</a>
+   177     </section>
+   178
+   179     <div class="container" id="music">
+   180         <div class="section-header">
+   181             <h2>Latest Music</h2>
+   182             <p style="color: var(--text-dim)">Stream the latest tracks directly from Spotify</p>
+   183         </div>
+   184
+   185         <div class="music-card">
+   186             <!-- Artist Embed for YungSoul -->
+   187             <iframe
+   188                 style="border-radius:12px"
+   189                 src="https://open.spotify.com/embed/artist/7ydS7UbzO4rsYK7WUqvQno?utm_source=generator&theme=0"
+   190                 width="100%"
+   191                 height="380"
+   192                 frameBorder="0"
+   193                 allowfullscreen=""
+   194                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+   195                 loading="lazy">
+   196             </iframe>
+   197         </div>
+   198
+   199         <div style="text-align: center; margin-top: 40px;">
+   200             <p>Support YungSoul on your favorite platform</p>
+   201             <div class="social-links">
+   202                 <a href="#">Instagram</a>
+   203                 <a href="#">Twitter</a>
+   204                 <a href="#">YouTube</a>
+   205                 <a href="https://open.spotify.com/artist/7ydS7UbzO4rsYK7WUqvQno" style="color: var(--spotify-green)">Spotify</a>
+   206             </div>
+   207         </div>
+   208     </div>
+   209
+   210     <footer>
+   211         <p class="copyright">&copy; 2026 YUNGSOUL. ALL RIGHTS RESERVED.</p>
+   212     </footer>
+   213
+   214 </body>
+   215 </html>
